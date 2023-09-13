@@ -10,7 +10,7 @@ taskListForm.addEventListener("submit", function (e) {
   const addedNewTask = document.createElement("div");
   addedNewTask.classList.add("addedTask");
 
-  addedNewTask.innerHTML = `<div class="card"><p>${newTask.value}</p>
+  addedNewTask.innerHTML = `<div class="card" onclick="done(event)"><p>${newTask.value}</p>
 <button onclick="deleteTask(event)">DELETE</button></div>`;
 
   const sectionForNewTasks = document.getElementById("myList");
@@ -28,7 +28,6 @@ const deleteTask = function (e) {
   }
 };
 
-// lineTask = function (e) {
-//     const clickedTask = e.target;
-//     const line =
-// }
+const done = function (e) {
+  e.target.style.textDecoration = "line-through";
+};
